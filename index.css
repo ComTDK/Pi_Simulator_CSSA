@@ -1,0 +1,10 @@
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+#numberPoints, #Pi {
+  bottom: -120px;
+  position: relative;
+  font-size: 30px;
+}
