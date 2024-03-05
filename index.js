@@ -1,12 +1,12 @@
 let point = [];
-let numPoints = 0;
-let areaCircle = 0;
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
 
+
+//Drawing the picture 
 function picture()
 {
 	ctx.beginPath();
@@ -19,12 +19,14 @@ function picture()
 	ctx.fill();
 	ctx.stroke();
 	
+	//Drawing circle
 	ctx.beginPath();
 	ctx.fillStyle = "rgb(255 0 0 / 50%)";
 	drawCircle(250, 250, 200, 0, 2*Math.PI);
 	ctx.fill();
 	ctx.stroke();
 
+	//Drawing line start from the centre of the circle
 	ctx.beginPath();
 	ctx.moveTo(250, 250);
 	ctx.lineTo(250, 50);
@@ -42,47 +44,57 @@ function picture()
 
 }
 
+
+
 function drawCircle(x, y, r, sAngle, eAngle) 
 {
     ctx.arc(x, y, r, sAngle, eAngle);
 }
 
+
 function draw() 
 {
-
-
-
-	 
-	
+	//Draw the whole picture
 	picture();
 
-
+	//Create the list storing number of points
 	for(let i = 0; i < 1000; ++i)
 	{
 		point.push([]);
 	}
-	let n = 1;
-	let pointInCircle = 1;
+
+	let n = 1; //number of current points 
+	let pointInCircle = 1; //number of points inside the circle
+
+	//Random the position of points and draw 
 	function drawPoint()
 	{
+		//Number of points that are allowed to appear
 		if(n >= 100)
 		{
+			//Clean the canvas every time number of current points(n) reaching the limit
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			picture();
+
+			//Redraw + reset the variables
+			picture(); 
 			n = 0;
 			pointInCircle = 0;
 		}
-		for(let i = 0; i < n; ++i)
-		{
+
+		//Drawing points
+
 			ctx.beginPath();
-			drawCircle(point[i][0], point[i][1], 1, 0, 2*Math.PI);
+			drawCircle(point[n][0], point[n][1], 1, 0, 2*Math.PI);
 			ctx.stroke();
-		}
+		
+
+		//Output the message + showing the number of points and the current approximated pi
 		document.getElementById("numberPoints").innerHTML = ("Number of Points = " + n);
 		prob = pointInCircle/n*4;
 		document.getElementById("Pi").innerHTML = ("Pi = " + prob);
 		n++;
 
+		//Random to create new points
 		let x1 = 50 + Math.random()*400;
 		let y1 = 50 + Math.random()*400;
 		let r = 1;
@@ -93,6 +105,7 @@ function draw()
 		point[n] = [x1, y1, r];
 	}
 
+	//Setting interval - drawing new points after every 200ms
 	setInterval(drawPoint, 200);
 	
 }
