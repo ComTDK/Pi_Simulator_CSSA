@@ -1,10 +1,13 @@
+
 .flex-container {
   display: flex;
-  background-color: DodgerBlue;
+/*  background-color: DodgerBlue;*/
+
 }
 
-#numberPoints, #Pi {
-  bottom: -120px;
-  position: relative;
-  font-size: 30px;
+
+
+
+header {
+  background-color: darkblue;
 }
