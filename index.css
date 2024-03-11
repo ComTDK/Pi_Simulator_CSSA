@@ -1,12 +1,7 @@
-
 .flex-container {
   display: flex;
 /*  background-color: DodgerBlue;*/
-
 }
-
-
-
 
 header {
   background-color: darkblue;
@@ -18,8 +13,7 @@ footer {
   height: 100px;
 }
 
-footer > p
-{
+footer > p {
   padding-left: 1%;
   padding-top: 1%;
 }
