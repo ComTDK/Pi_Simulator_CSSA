@@ -1,6 +1,11 @@
 :root {
   box-sizing: border-box;
   height: 100%;
+
+  --main-1: #132648;
+  --main-2: #3D68B8;
+  --sub-1: #EBB03F;
+  --sub-2: #DAD4CC;
 }
 
 body {
@@ -9,6 +14,7 @@ body {
   font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  background-color: var(--main-2);
 }
 
 .header {
@@ -17,7 +23,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   padding: 16px;
-  background-color: darkblue;
 }
 
 .logo {
@@ -25,12 +30,12 @@ body {
 }
 
 .title {
-  color: white;
   font-size: 2rem;
   text-align: center;
 }
 
 .subtitle {
+  color: var(--sub-2);
   font-size: 1rem;
 }
 
@@ -41,8 +46,8 @@ body {
   align-items: center;
   padding: 16px;
   margin: 32px;
-  border: 3px solid black;
-  background-color: aquamarine;
+  border: 3px solid var(--main-1);
+  background-color: var(--sub-1);
 }
 
 .main-heading {
@@ -56,18 +61,24 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  color: var(--main-1);
 }
 
-.flex-container {
-  display: flex;
-/*  background-color: DodgerBlue;*/
-}
-
-footer {
-  background-color: darkblue;
-  color: white;
-  font-size: 2rem;
+.statistic {
+  font-size: clamp(1rem, 4vw, 2rem);
+  flex: auto;
   text-align: center;
-  line-height: 100px;
+}
+
+.footer {
+  font-size: 2rem;
   min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header, .footer {
+  background-color: var(--main-1);
+  color: white;
 }
