@@ -1,10 +1,43 @@
+:root {
+  box-sizing: border-box;
+
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px;
+  background-color: darkblue;
+}
+
+.logo {
+  width: clamp(80px, 10vw, 100px)
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
 .flex-container {
   display: flex;
 /*  background-color: DodgerBlue;*/
-}
-
-header {
-  background-color: darkblue;
 }
 
 footer {
